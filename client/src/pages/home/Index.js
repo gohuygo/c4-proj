@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 // TODO: Remove when no longer needed for reference
-import ReadString from '../ReadString';
-import SetString from '../SetString';
-class Index extends Component {
+import ReadString from './ReadString';
+import SetString from './SetString';
+
+class HomeIndex extends Component {
   state = { loading: true, drizzleState: null };
 
   componentDidMount() {
-    console.log("HELLO", this.props)
     const { drizzle } = this.props;
 
     // subscribe to changes in the store
@@ -45,4 +45,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default HomeIndex;

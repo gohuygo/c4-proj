@@ -10,7 +10,7 @@ Then install node packages:
 
 `npm install`
 
-You might need to setup a symlink to point to the contract:
+You might need to setup a new link source to the contract:
 
 `cd src`
 
