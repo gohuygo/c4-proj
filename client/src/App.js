@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Layout from "./pages/Layout";
+
+// TODO: Remove when no longer needed for reference
 import ReadString from "./ReadString";
 import SetString from "./SetString";
 
@@ -31,16 +33,20 @@ class App extends Component {
     if (this.state.loading) return "Loading Drizzle...";
 
     return (
-      <div className="App">
-        <ReadString
-          drizzle={this.props.drizzle}
-          drizzleState={this.state.drizzleState}
-        />
-        <SetString
-          drizzle={this.props.drizzle}
-          drizzleState={this.state.drizzleState}
-        />
-      </div>
+      <Layout>
+        <div>
+          <ReadString
+            drizzle={this.props.drizzle}
+            drizzleState={this.state.drizzleState}
+          />
+          <SetString
+            drizzle={this.props.drizzle}
+            drizzleState={this.state.drizzleState}
+          />
+        </div>
+      </Layout>
+
+
     );
   }
 }
