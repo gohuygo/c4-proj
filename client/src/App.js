@@ -1,54 +1,27 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Layout from "./pages/Layout";
 
-// TODO: Remove when no longer needed for reference
-import ReadString from "./ReadString";
-import SetString from "./SetString";
+import Layout from './pages/Layout';
+import Index from './pages/Index';
 
 class App extends Component {
-  state = { loading: true, drizzleState: null };
-
-  componentDidMount() {
-    const { drizzle } = this.props;
-
-    // subscribe to changes in the store
-    this.unsubscribe = drizzle.store.subscribe(() => {
-
-      // every time the store updates, grab the state from drizzle
-      const drizzleState = drizzle.store.getState();
-
-      // check to see if it's ready, if so, update local component state
-      if (drizzleState.drizzleStatus.initialized) {
-        this.setState({ loading: false, drizzleState });
-      }
-    });
-  }
-
-  compomentWillUnmount() {
-    this.unsubscribe();
-  }
 
   render() {
-    if (this.state.loading) return "Loading Drizzle...";
-
     return (
       <Layout>
-        <div>
-          <ReadString
-            drizzle={this.props.drizzle}
-            drizzleState={this.state.drizzleState}
-          />
-          <SetString
-            drizzle={this.props.drizzle}
-            drizzleState={this.state.drizzleState}
-          />
-        </div>
+        <Router>
+          <div>
+          <Route path="/" exact render={ (props) => <Index drizzle={this.props.drizzle } />} />
+          <Route path="/about/" component={About} />
+          <Route path="/users/" component={Users} />
+          </div>
+        </Router>
       </Layout>
-
-
     );
   }
 }
+
+const About = () => <h2>About</h2>;
+const Users = () => <h2>Users</h2>;
 
 export default App;
