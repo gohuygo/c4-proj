@@ -3,24 +3,23 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Layout from './pages/Layout';
 import HomeIndex from './pages/home/Index';
+import CityShow from './pages/city/Show';
+import IndividualShow from './pages/individual/Show';
 
 class App extends Component {
   render() {
     return (
-      <Layout>
-        <Router>
+      <Router>
+        <Layout>
           <div>
             <Route path="/" exact render={ (props) => <HomeIndex drizzle={this.props.drizzle } />} />
-            <Route path="/about/" component={About} />
-            <Route path="/users/" component={Users} />
+            <Route path="/individual" component={IndividualShow} />
+            <Route path="/city" component={CityShow} />
           </div>
-        </Router>
-      </Layout>
+        </Layout>
+      </Router>
     );
   }
 }
-
-const About = () => <h2>About</h2>;
-const Users = () => <h2>Users</h2>;
 
 export default App;

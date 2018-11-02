@@ -6,10 +6,6 @@ Bonds bonds bonds.
 
 Clone or download the project.
 
-Then install node packages:
-
-`npm install`
-
 You might need to setup a new link source to the contract:
 
 `cd src`
