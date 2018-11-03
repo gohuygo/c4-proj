@@ -37,7 +37,7 @@ contract City {
         require(cities[msg.sender].owner == 0);
         cities[msg.sender] = CityStruct({
             owner:msg.sender, state:_state, county:_county,
-            city:_city, issuer:_issuer, numberOfBonds:1
+            city:_city, issuer:_issuer, numberOfBonds:0
         });
     }
 
