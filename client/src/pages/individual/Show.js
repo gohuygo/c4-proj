@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon, Button, Segment } from 'semantic-ui-react'
+import { Card, Icon, Button, Segment, Container } from 'semantic-ui-react'
 
 class IndividualShow extends Component {
   renderButtons(){
@@ -17,7 +17,7 @@ class IndividualShow extends Component {
 
   render() {
     return(
-      <div>
+      <Container fluid>
         <Card.Group>
           <Card
             header='Elliot Baker'
@@ -54,7 +54,7 @@ class IndividualShow extends Component {
             extra={this.renderButtons()}
           />
         </Card.Group>
-      </div>
+      </Container>
     )
   }
 }
