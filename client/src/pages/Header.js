@@ -6,7 +6,7 @@ export default(props) => {
 
   return(
     <Menu>
-      <Menu.Item>Our Bond Company</Menu.Item>
+      <Menu.Item><a href="/">Our Bond Company</a></Menu.Item>
       <Menu.Menu position='right'>
         <Menu.Item>{account}</Menu.Item>
       </Menu.Menu>
