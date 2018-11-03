@@ -3,11 +3,8 @@ import React from "react";
 class ReadString extends React.Component {
   state = { dataKey: null }
   componentDidMount() {
-    const { drizzle, drizzleState } = this.props;
+    const { drizzle } = this.props;
     const contract = drizzle.contracts.MyStringStore;
-
-    console.log(drizzle);
-    console.log(drizzleState);
 
     // let drizzle know we want to watch the `myString` method
     const dataKey = contract.methods["myString"].cacheCall();
