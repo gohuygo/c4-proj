@@ -10,6 +10,8 @@ export default(props) => {
   `
   const Logo = styled.p`
     font-size:20px;
+    color: black;
+    text-decoration: none;
   `
 
   return(

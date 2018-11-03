@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Segment, Card } from 'semantic-ui-react';
 import styled from 'styled-components'
+import { Redirect } from 'react-router'
 
 // TODO: Remove when no longer needed for reference
 import ReadString from './ReadString';
@@ -32,8 +33,10 @@ class HomeIndex extends Component {
     this.unsubscribe();
   }
 
-
   render() {
+    if(false) return(<Redirect to='/individual'/>);
+    if(false) return(<Redirect to='/city'/>);
+
     return(
       <Fragment>
         <BlueBackgroundContainer>
