@@ -39,9 +39,9 @@ class App extends Component {
     return (
       <Router>
         <Layout account={this.state.account}>
-          <Route path="/"           render={ (props) => <HomeIndex      drizzle={this.props.drizzle} />} />
-          <Route path="/individual" render={ (props) => <IndividualShow drizzle={this.props.drizzle} />} />
-          <Route path="/city"       render={ (props) => <CityShow       drizzle={this.props.drizzle} />} />
+          <Route exact path="/"           render={ (props) => <HomeIndex      drizzle={this.props.drizzle} />} />
+          <Route exact path="/individual" render={ (props) => <IndividualShow drizzle={this.props.drizzle} />} />
+          <Route exact path="/city"       render={ (props) => <CityShow       drizzle={this.props.drizzle} />} />
         </Layout>
       </Router>
     );
