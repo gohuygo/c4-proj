@@ -8,11 +8,18 @@ export default(props) => {
   const MenuWrapper = styled.div`
     border-bottom: 1px solid #e6e4e4;
   `
+  const Logo = styled.p`
+    font-size:20px;
+  `
 
   return(
     <MenuWrapper>
       <Menu secondary size="large">
-        <Menu.Item><a href="/">Our Bond Company</a></Menu.Item>
+        <Menu.Item>
+          <a href="/">
+            <Logo>MUniverse</Logo>
+          </a>
+        </Menu.Item>
         <Menu.Menu position='right'>
           <Menu.Item>{account}</Menu.Item>
         </Menu.Menu>

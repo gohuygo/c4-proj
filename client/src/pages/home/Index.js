@@ -38,6 +38,9 @@ class HomeIndex extends Component {
       <Fragment>
         <BlueBackgroundContainer>
           <div class="ui vertical masthead center aligned segment">
+            {/*Hack the vertical align for now.... */ }
+            <br/><br/><br/><br/><br/><br/><br/><br/>
+
             <div class="text">
               <h1 class="ui inverted header">
                 Imagine-a-Company
@@ -72,8 +75,6 @@ class HomeIndex extends Component {
             />
           </Card.Group>
         </Segment>
-
-
       </Fragment>
     )
   }
