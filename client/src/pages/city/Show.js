@@ -4,7 +4,9 @@ class CityShow extends Component {
   render() {
     return(
       <div>
-        <p>City#Show</p>
+
+
+
       </div>
     )
   }
