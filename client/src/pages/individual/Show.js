@@ -21,35 +21,35 @@ class IndividualShow extends Component {
         <Card.Group>
           <Card
             header='Elliot Baker'
-            meta='Friend'
+            meta='Municipal Bond'
             description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
             extra={this.renderButtons()}
           />
 
           <Card
             header='Elliot Baker'
-            meta='Friend'
+            meta='Municipal Bond'
             description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
             extra={this.renderButtons()}
           />
 
           <Card
             header='Elliot Baker'
-            meta='Friend'
+            meta='Municipal Bond'
             description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
             extra={this.renderButtons()}
           />
 
           <Card
             header='Elliot Baker'
-            meta='Friend'
+            meta='Municipal Bond'
             description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
             extra={this.renderButtons()}
           />
 
           <Card
             header='Elliot Baker'
-            meta='Friend'
+            meta='Municipal Bond'
             description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
             extra={this.renderButtons()}
           />
