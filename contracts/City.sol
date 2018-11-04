@@ -49,4 +49,7 @@ contract City {
         return (city.owner, city.state, city.county, city.city, city.issuer, city.numberOfBonds);
     }
 
+    function isCity() public view returns (bool _isCity) {
+        return (cities[msg.sender].owner != 0);
+    }
 }

@@ -121,9 +121,7 @@ class HomeIndex extends Component {
             </Grid.Row>
           </Grid>
         </Container>
-      
         </Segment>
-
       </Fragment>
     )
   }
