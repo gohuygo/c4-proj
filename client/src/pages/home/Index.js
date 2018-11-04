@@ -41,7 +41,7 @@ class HomeIndex extends Component {
         <BlueBackgroundContainer>
           <div class="ui vertical masthead center aligned segment">
             {/*Hack the vertical align for now.... */ }
-            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
             <div class="text">
               <h1 class="ui inverted header">
@@ -54,20 +54,21 @@ class HomeIndex extends Component {
         </BlueBackgroundContainer>
 
         <Segment vertical>
+          <br /><br /><br /><br />
           <Card.Group centered>
             <Card
               image='https://building-microgrid.lbl.gov/sites/default/files/styles/image_main/public/Berkeley%20Pic-small.png?itok=RFa6QH9B'
               header='Berkeley, CA'
               meta='Municipal Bond'
               extra={<p>This belongs to the city of Berkeley</p>}
-            />
+            /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <Card
               image='https://www.charlottefive.com/wp-content/uploads/2018/02/skyline-charlotte-nc-charlottefive-696x463.jpg'
               header='Charlotte, NC'
               meta='Municipal Bond'
               extra={<p>This belongs to the city of Berkeley</p>}
-            />
+            /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <Card
               image='https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx'
@@ -76,6 +77,7 @@ class HomeIndex extends Component {
               extra={<p>This belongs to the city of Berkeley</p>}
             />
           </Card.Group>
+          <br /><br /><br /><br />
         </Segment>
 
        <Segment inverted vertical style={{ padding: '5em 0em' }}>
