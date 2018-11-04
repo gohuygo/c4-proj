@@ -78,8 +78,6 @@ class HomeIndex extends Component {
             />
           </Card.Group>
         </Segment>
-<<<<<<< Updated upstream
-=======
 
        <Segment inverted vertical style={{ padding: '5em 0em' }}>
         <Container>
@@ -126,7 +124,6 @@ class HomeIndex extends Component {
       
         </Segment>
 
->>>>>>> Stashed changes
       </Fragment>
     )
   }
