@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Icon, Container } from 'semantic-ui-react'
+import { Button, Icon, Container, Menu } from 'semantic-ui-react'
 import CreateBondModal from './CreateBondModal';
 
 class CityShow extends Component {
@@ -20,7 +20,6 @@ class CityShow extends Component {
   }
 
   openBondModal = () => {
-    console.log("hi")
     this.createBondModal.handleOpen();
   }
 
@@ -28,6 +27,11 @@ class CityShow extends Component {
     return(
       <Container>
           <br/>
+          <Menu tabular>
+            <Menu.Item name='Create Bonds' active={true}/>
+            <Menu.Item name='Manage Bonds' active={false} />
+          </Menu>
+
           <Button floated="right" color='green' onClick={this.openBondModal} inverted>
             <Icon name='plus'/> New
           </Button>
