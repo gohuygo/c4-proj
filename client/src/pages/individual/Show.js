@@ -21,37 +21,9 @@ class IndividualShow extends Component {
         <br />
         <Card.Group>
           <Card
-            header='City of Berkeley'
-            meta='Municipal Bond'
-            description='1000 Tokens'
-            extra={this.renderButtons()}
-          />
-
-          <Card
-            header='City of San Jose'
-            meta='Municipal Bond'
-            description='52 Tokens'
-            extra={this.renderButtons()}
-          />
-
-          <Card
-            header='City of San Francisco'
-            meta='Municipal Bond'
-            description='86 Tokens'
-            extra={this.renderButtons()}
-          />
-
-          <Card
-            header='City of Napa'
-            meta='Municipal Bond'
-            description='135 Tokens'
-            extra={this.renderButtons()}
-          />
-
-          <Card
-            header='City of Los Angeles'
-            meta='Municipal Bond'
-            description='999 Tokens'
+            header='City of Fremont'
+            meta='School Bond'
+            description='30000 Tokens'
             extra={this.renderButtons()}
           />
         </Card.Group>
@@ -75,20 +47,6 @@ class IndividualShow extends Component {
               <Table.Cell>
                   <a href="https://www.facebook.com/Muniverse"> Withdraw 10 Eth </a>
               </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-            <Table.Cell>San Francisco Bridge</Table.Cell>
-              <Table.Cell>12/30/2018</Table.Cell>
-              <Table.Cell>30</Table.Cell>
-              <Table.Cell>
-                  <a href="https://www.facebook.com/Muniverse"> Withdraw 10 Eth </a>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-            <Table.Cell>Carolina Parks </Table.Cell>
-              <Table.Cell>3/29/2019</Table.Cell>
-              <Table.Cell>120</Table.Cell>
-              <Table.Cell>0 Eth (alread withdrawn)</Table.Cell>
             </Table.Row>
           </Table.Body>
         </Table>

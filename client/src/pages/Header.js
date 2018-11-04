@@ -26,6 +26,8 @@ class Header extends Component {
   }
 
   displayAccountNumber() {
+    if(!this.isCity())
+      return "City Signup"
     const { account } = this.props;
     return account ? `${account.slice(0, 7)}...${account.slice(-3)}` : ''
   }
