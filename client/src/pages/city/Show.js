@@ -5,8 +5,6 @@ class CityShow extends Component {
     return(
       <div>
 
-
-
       </div>
     )
   }

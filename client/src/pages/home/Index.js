@@ -3,9 +3,6 @@ import { Segment, Card, Container, Grid, List, Header } from 'semantic-ui-react'
 import styled from 'styled-components'
 import { Redirect } from 'react-router'
 
-// TODO: Remove when no longer needed for reference
-import ReadString from './ReadString';
-import SetString from './SetString';
 
 const BlueBackgroundContainer = styled.div `
   background-color: #394cb5;
@@ -13,29 +10,31 @@ const BlueBackgroundContainer = styled.div `
 `
 
 class HomeIndex extends Component {
-  state = { loading: true, drizzleState: null, dataKey: null };
+  state = { loading: true, drizzleState: null, isCityDataKey: null };
 
   componentDidMount() {
     const { drizzle } = this.props;
-    const contract = drizzle.contracts.City;
+    const cityContract = drizzle.contracts.City;
 
-    // let drizzle know we want to watch the `myString` method
-    const dataKey = contract.methods["isCity"].cacheCall();
+    const isCityDataKey = cityContract.methods["isCity"].cacheCall();
 
-    // save the `dataKey` to local component state for later reference
-    this.setState({ dataKey });
+    this.setState({ isCityDataKey });
+  }
+
+  isCity() {
+    const { City } = this.props.drizzleState.contracts;
+
+    const isCityRequest = City.isCity[this.state.isCityDataKey];
+    return isCityRequest ? isCityRequest.value : false;
+  }
+
+  isIndividual() {
+    return false;
   }
 
   render() {
-    const { City } = this.props.drizzleState.contracts;
-
-    const request = City.isCity[this.state.dataKey];
-    const isCity = request ? request.value : false;
-
-    const isIndividual = false;
-
-    if(isIndividual) return(<Redirect to='/individual'/>);
-    if(isCity) return(<Redirect to='/city'/>);
+    if(this.isIndividual()) return(<Redirect to='/individual'/>);
+    if(this.isCity())       return(<Redirect to='/city'/>);
 
     return(
       <Fragment>

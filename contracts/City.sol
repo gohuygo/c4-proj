@@ -1,8 +1,6 @@
 pragma solidity 0.4.24;
 
-
 contract City {
-
     struct Bond {
         string name;
         string startDate;
