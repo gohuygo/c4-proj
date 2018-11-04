@@ -13,29 +13,29 @@ const BlueBackgroundContainer = styled.div `
 `
 
 class HomeIndex extends Component {
-  state = { loading: true, drizzleState: null };
+  state = { loading: true, drizzleState: null, dataKey: null };
 
   componentDidMount() {
     const { drizzle } = this.props;
-    // subscribe to changes in the store
-    this.unsubscribe = drizzle.store.subscribe(() => {
+    const contract = drizzle.contracts.City;
 
-      // every time the store updates, grab the state from drizzle
-      const drizzleState = drizzle.store.getState();
-      // check to see if it's ready, if so, update local component state
-      if (drizzleState.drizzleStatus.initialized) {
-        this.setState({ loading: false, drizzleState });
-      }
-    });
-  }
+    // let drizzle know we want to watch the `myString` method
+    const dataKey = contract.methods["isCity"].cacheCall();
 
-  compomentWillUnmount() {
-    this.unsubscribe();
+    // save the `dataKey` to local component state for later reference
+    this.setState({ dataKey });
   }
 
   render() {
-    if(false) return(<Redirect to='/individual'/>);
-    if(false) return(<Redirect to='/city'/>);
+    const { City } = this.props.drizzleState.contracts;
+
+    const request = City.isCity[this.state.dataKey];
+    const isCity = request ? request.value : false;
+
+    const isIndividual = false;
+
+    if(isIndividual) return(<Redirect to='/individual'/>);
+    if(isCity) return(<Redirect to='/city'/>);
 
     return(
       <Fragment>

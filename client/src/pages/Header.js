@@ -14,25 +14,9 @@ const Logo = styled.p`
 class Header extends Component {
   state = { dataKey: null }
 
-  componentDidMount() {
-    const { drizzle } = this.props;
-    const contract = drizzle.contracts.City;
-
-    // let drizzle know we want to watch the `myString` method
-    const dataKey = contract.methods["isCity"].cacheCall();
-
-    // save the `dataKey` to local component state for later reference
-    this.setState({ dataKey });
-  }
-
   render() {
-    const { City } = this.props.drizzleState.contracts;
-
     const { account } = this.props;
     let truncatedAccount = account ? `${account.slice(0, 7)}...${account.slice(-3)}` : ''
-
-    const request = City.isCity[this.state.dataKey];
-    const isCity = request ? request.value : '';
 
     return(
       <MenuWrapper>
@@ -44,8 +28,6 @@ class Header extends Component {
           </Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item>{truncatedAccount}</Menu.Item>
-            <Menu.Item>{String(isCity)}</Menu.Item>
-
           </Menu.Menu>
         </Menu>
       </MenuWrapper>
