@@ -45,9 +45,9 @@ class HomeIndex extends Component {
 
             <div class="text">
               <h1 class="ui inverted header">
-                Imagine-a-Company
-                <br/>
-                Do whatever you want when you want to.
+                Invest in your community
+                {/*kidstime.al/wp-content/uploads/2018/02/pest-control-beldon.jpg*/}
+
               </h1>
             </div>
           </div>
