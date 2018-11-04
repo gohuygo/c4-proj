@@ -19,7 +19,6 @@ class CitySignupModal extends Component {
   handleClose = () => this.setState({ modalOpen: false })
 
   handleSignup = () => {
-    console.log("handleSignup")
     const { drizzle, drizzleState } = this.props;
     const { state, county, city, issuer } = this.state
 
