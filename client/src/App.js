@@ -6,6 +6,9 @@ import HomeIndex from './pages/home/Index';
 import CityShow from './pages/city/Show';
 import IndividualShow from './pages/individual/Show';
 
+import ReadString from './pages/home/ReadString';
+import SetString from './pages/home/SetString';
+
 class App extends Component {
   state = {
     drizzleState: null,
@@ -36,9 +39,11 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.loading) return "Loading Drizzle...";
+
     return (
       <Router>
-        <Layout account={this.state.account}>
+        <Layout account={this.state.account} drizzle={this.props.drizzle}>
           <Route exact path="/"           render={ (props) => <HomeIndex      drizzle={this.props.drizzle} />} />
           <Route exact path="/individual" render={ (props) => <IndividualShow drizzle={this.props.drizzle} />} />
           <Route exact path="/city"       render={ (props) => <CityShow       drizzle={this.props.drizzle} />} />
