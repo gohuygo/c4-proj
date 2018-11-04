@@ -1,6 +1,8 @@
 pragma solidity ^0.4.24;
 //pragma experimental ABIEncoderV2;
 
+import "./ERC20.sol";
+
 contract City {
 
     struct Bond {
@@ -92,6 +94,8 @@ contract City {
         bond.totalTokensSupply = totalTokensSupply;
         // bond.tokenSymbol = tokenSymbol;
         bond.bondContractERC20Address = msg.sender;
+        bond.tokenSymbol = tokenSymbol;
+        bond.bondContractERC20Address = new ERC20(name,totalTokensSupply,tokenSymbol);
       //  bond.creditRating = creditRating;
       //  bond.couponRate = couponRate;
       //  bond.faceValue = faceValue;
@@ -110,11 +114,12 @@ contract City {
         string name,
         uint   totalTokensSupply,
         string tokenSymbol,
-        string status
+        string status,
+        address bondContractERC20Address
         ) {
             if(isCity()){
                 Bond memory bond = cities[msg.sender].bonds[bondIndex-1];
-                return (bond.name, bond.totalTokensSupply, bond.tokenSymbol, bond.status);
+                return (bond.name, bond.totalTokensSupply, bond.tokenSymbol, bond.status, bond.bondContractERC20Address);
             } else {
                 address bondAddress = investorToBonds[msg.sender][bondIndex-1];
                 return getBondByAddress(bondAddress);
@@ -125,7 +130,8 @@ contract City {
         string name,
         uint   totalTokensSupply,
         string tokenSymbol,
-        string status
+        string status,
+        address bondContractERC20Address
         ) {
            Bond memory b1;
            for(uint i=0; i<cityAddresses.length; i++ ){
@@ -134,11 +140,11 @@ contract City {
                    Bond memory bond = city.bonds[j];
                    if(bond.bondContractERC20Address == _addr ) {
                         b1 = bond;
-                        return (b1.name, b1.totalTokensSupply, b1.tokenSymbol, b1.status);
+                        return (b1.name, b1.totalTokensSupply, b1.tokenSymbol, b1.status, b1.bondContractERC20Address);
                    }
                }
            }
-           return (b1.name, b1.totalTokensSupply, b1.tokenSymbol, b1.status);
+           return (b1.name, b1.totalTokensSupply, b1.tokenSymbol, b1.status, b1.bondContractERC20Address);
         }
 
     function getNumberOfBonds() public view returns (uint _num) {
@@ -150,3 +156,4 @@ contract City {
     }
 
 }
+
