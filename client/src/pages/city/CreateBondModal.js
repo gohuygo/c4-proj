@@ -24,7 +24,7 @@ class CreateBondModal extends Component {
 
     const contract = drizzle.contracts.City;
 
-    const stackId = contract.methods["createBond"].cacheSend(this.state.name, this.state.totalTokenSupply, this.state.tokenSymbol, this.state.status, {
+    const stackId = contract.methods["createBond"].cacheSend(this.state.name, parseInt(this.state.totalTokenSupply), this.state.tokenSymbol, this.state.status, {
       from: drizzleState.accounts[0]
     });
 
@@ -57,17 +57,17 @@ class CreateBondModal extends Component {
 
               <Form.Field required>
                 <label>Token Symbol</label>
-                <input placeholder='Total Fiat Amount' onChange={(e) => {this.setState({tokenSymbol: e.target.value})}} />
+                <input placeholder='Token Symbol' onChange={(e) => {this.setState({tokenSymbol: e.target.value})}} />
               </Form.Field>
 
               <Form.Field required>
                 <label>Status</label>
-                <input placeholder='totalTokenSupply' onChange={(e) => {this.setState({status: e.target.value})}} />
+                <input placeholder='Status' onChange={(e) => {this.setState({status: e.target.value})}} />
               </Form.Field>
 
               <Form.Field required>
                 <label>Total Supply</label>
-                <input placeholder='Market Value' onChange={(e) => {this.setState({totalTokenSupply: e.target.value})}} />
+                <input placeholder='Total Supply' onChange={(e) => {this.setState({totalTokenSupply: e.target.value})}} />
               </Form.Field>
             </Form>
 

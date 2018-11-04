@@ -90,7 +90,7 @@ contract City {
       //  bond.orderDeadline = orderDeadline;
       //  bond.totalAmountFiat = totalAmountFiat;
         bond.totalTokensSupply = totalTokensSupply;
-        bond.tokenSymbol = tokenSymbol;
+        // bond.tokenSymbol = tokenSymbol;
         bond.bondContractERC20Address = msg.sender;
       //  bond.creditRating = creditRating;
       //  bond.couponRate = couponRate;
@@ -147,10 +147,6 @@ contract City {
         } else {
             return investorToBonds[msg.sender].length;
         }
-    }
-
-    function getBond() public view returns (string name, address _addr) {
-        return (cities[msg.sender].bonds[0].name, cities[msg.sender].bonds[0].bondContractERC20Address);
     }
 
 }
