@@ -6,19 +6,9 @@ class CreateBondModal extends Component {
     modalOpen: false,
     stackId: null,
     name: null,
-    startDate: null,
-    orderDeadline: null,
-    totalAmountFiat: null,
     totalTokenSupply: null,
     tokenSymbol: null,
-    bondContractERC20Address: null,
-    creditRating: null,
-    couponRate: null,
-    faceValue: null,
-    marketValue: null,
-    tTMInMonths: null,
     status: null,
-    typeOfBond: null,
   }
 
   constructor(props){
@@ -34,9 +24,7 @@ class CreateBondModal extends Component {
 
     const contract = drizzle.contracts.City;
 
-    const stackId = contract.methods["createBond"].cacheSend(this.state.name, this.state.startDate, this.state.orderDeadline, this.state.totalAmountFiat,
-    this.state.totalTokenSupply, this.state.tokenSymbol, this.state.bondContractERC20Address, this.state.creditRating, this.state.couponRate, this.state.faceValue,
-    this.state.marketValue, this.state.tTMInMonths, this.state.status, this.state.typeOfBond, {
+    const stackId = contract.methods["createBond"].cacheSend(this.state.name, this.state.totalTokenSupply, this.state.tokenSymbol, this.state.status, {
       from: drizzleState.accounts[0]
     });
 
@@ -68,68 +56,18 @@ class CreateBondModal extends Component {
               </Form.Field>
 
               <Form.Field required>
-                <label>Start Date</label>
-                <input placeholder='Start Date' onChange={(e) => {this.setState({startDate: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Order Deadline</label>
-                <input placeholder='Order Deadline' onChange={(e) => {this.setState({orderDeadline: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Total Fiat Amount</label>
-                <input placeholder='Total Fiat Amount' onChange={(e) => {this.setState({totalAmountFiat: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Total Token Supply</label>
-                <input placeholder='Total Fiat Amount' onChange={(e) => {this.setState({totalTokensSupply: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
                 <label>Token Symbol</label>
                 <input placeholder='Total Fiat Amount' onChange={(e) => {this.setState({tokenSymbol: e.target.value})}} />
               </Form.Field>
 
               <Form.Field required>
-                <label>ERC20 Address</label>
-                <input placeholder='ERC20 Address' onChange={(e) => {this.setState({bondContractERC20Address: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Coupon Rate</label>
-                <input placeholder='Coupon Rate' onChange={(e) => {this.setState({couponRate: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Face Value</label>
-                <input placeholder='Face Value' onChange={(e) => {this.setState({faceValue: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Credit Rating</label>
-                <input placeholder='Credit Rating' onChange={(e) => {this.setState({creditRating: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>Market Value</label>
-                <input placeholder='Market Value' onChange={(e) => {this.setState({marketValue: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
-                <label>tTM in Months</label>
-                <input placeholder='Market Value' onChange={(e) => {this.setState({tTMInMonths: e.target.value})}} />
-              </Form.Field>
-
-              <Form.Field required>
                 <label>Status</label>
-                <input placeholder='Market Value' onChange={(e) => {this.setState({status: e.target.value})}} />
+                <input placeholder='totalTokenSupply' onChange={(e) => {this.setState({status: e.target.value})}} />
               </Form.Field>
 
               <Form.Field required>
-                <label>Bond Type</label>
-                <input placeholder='Market Value' onChange={(e) => {this.setState({typeOfBond: e.target.value})}} />
+                <label>Total Supply</label>
+                <input placeholder='Market Value' onChange={(e) => {this.setState({totalTokenSupply: e.target.value})}} />
               </Form.Field>
             </Form>
 
